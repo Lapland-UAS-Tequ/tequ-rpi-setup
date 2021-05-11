@@ -10,14 +10,14 @@ Raspberry PI 3/4 preparation for basic DAQ usage.
 
 ## Actions
 
-1. 
+1. Update
 
 ```sudo apt-get ```
 
 2. Install Node-RED
 
-3. 
+3. Install Python
 
-4. 
+4. Configure & enable interfaces
 
-5. 
+5. Configure watchdog
