@@ -56,7 +56,7 @@ sudo systemctl enable nodered.service
 
 ### 7. Install Node-RED libraries that are often needed
 ```
-cd ~./node-red
+cd ~/.node-red
 npm install node-red-auth-github &&
 npm install node-red-dashboard && 
 npm install node-red-node-base64 &&
@@ -81,11 +81,26 @@ npm install node-red-contrib-image-info &&
 npm install node-red-contrib-image-output &&
 npm install node-red-contrib-modbus && 
 npm install node-red-contrib-moment && 
+npm install node-red-contrib-multipart-stream-decoder &&
+npm install node-red-contrib-multipart-stream-encoder &&
 npm install node-red-contrib-scx-ibmiotapp &&
 npm install node-red-contrib-sunevents  
 ```
+### 9. Secure your Node-RED editor 
 
-### 8. Install or update Python & Picamera
+https://nodered.org/docs/user-guide/runtime/securing-node-red
+
+```
+cd ~/.node-red 
+
+node-red-admin hash-pw
+```
+
+
+
+
+### 10. Install or update Python & Picamera
+
 
 ```
 sudo apt-get install python-picamera python3-picamera
