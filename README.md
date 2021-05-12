@@ -31,7 +31,9 @@ Pre-configure your installation by pressing CTRL+SHIFT+X after you select OS in 
 
 ### 4. Configure & enable interfaces
 
-```sudo raspi-config```
+```
+sudo raspi-config
+```
 
 - Enable Serial port (without console)
 - Enable SSH
@@ -42,11 +44,15 @@ Pre-configure your installation by pressing CTRL+SHIFT+X after you select OS in 
 
 ### 5. Install Node-RED
 
-```bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)```
+```
+bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+```
 
 ### 6. Configure Node-RED to autostart on boot
 
-```sudo systemctl enable nodered.service```
+```
+sudo systemctl enable nodered.service
+```
 
 ### 7. Install Node-RED libraries that are often needed
 ```
@@ -81,7 +87,9 @@ npm install node-red-contrib-sunevents
 
 ### 8. Install or update Python & Picamera
 
-```sudo apt-get install python-picamera python3-picamera```
+```
+sudo apt-get install python-picamera python3-picamera
+```
 
 ### 9. Install &configure hardware watchdog
 
