@@ -49,7 +49,8 @@ Pre-configure your installation by pressing CTRL+SHIFT+X after you select OS in 
 ```sudo systemctl enable nodered.service```
 
 ### 7. Install Node-RED libraries that are often needed
-```cd ~./node-red
+```
+cd ~./node-red
 npm install node-red-auth-github &&
 npm install node-red-dashboard && 
 npm install node-red-node-base64 &&
@@ -84,22 +85,26 @@ npm install node-red-contrib-sunevents
 
 ### 9. Install &configure hardware watchdog
 
-```sudo su
+```
+sudo su
 echo 'dtparam=watchdog=on' >> /boot/config.txt
 reboot
 ```
 
-```sudo apt-get update
+```
+sudo apt-get update
 sudo apt-get install watchdog
 ```
 
-```sudo su
+```
+sudo su
 echo 'watchdog-device = /dev/watchdog' >> /etc/watchdog.conf
 echo 'watchdog-timeout = 15' >> /etc/watchdog.conf
 echo 'max-load-1 = 24' >> /etc/watchdog.conf
 ```
 
-```sudo systemctl enable watchdog
+```
+sudo systemctl enable watchdog
 sudo systemctl start watchdog
 sudo systemctl status watchdog
 ```
