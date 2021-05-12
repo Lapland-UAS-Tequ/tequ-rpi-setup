@@ -96,7 +96,7 @@ cd ~/.node-red
 node-red-admin hash-pw
 ```
 
-Edit /.node-red/settings.js and replace password 
+Edit /.node-red/settings.js and replace password in "adminAuth"
 
 ```
 adminAuth: {
