@@ -85,7 +85,7 @@ npm install node-red-contrib-multipart-stream-encoder &&
 npm install node-red-contrib-scx-ibmiotapp &&
 npm install node-red-contrib-sunevents  
 ```
-### 9. Secure your Node-RED editor 
+### 8. Secure Node-RED editor 
 
 https://nodered.org/docs/user-guide/runtime/securing-node-red
 
@@ -111,14 +111,13 @@ adminAuth: {
 }
 ```
 
-### 10. Install or update Python & Picamera
-
+### 9. Install or update Python & Picamera
 
 ```
 sudo apt-get install python-picamera python3-picamera
 ```
 
-### 9. Install &configure hardware watchdog
+### 10. Install &configure hardware watchdog
 
 ```
 sudo su
