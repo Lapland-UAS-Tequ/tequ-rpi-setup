@@ -14,9 +14,9 @@ Raspberry PI 3/4 preparation for basic DAQ usage.
 
 1. Prepare Raspberry Pi OS SD-card with Raspberry Pi Imager
 
-32 GB SD-card is preferable
-
 https://www.raspberrypi.org/software/
+
+32 GB SD-card is preferable
 
 Pre-configure your installation by pressing CTRL+SHIFT+X after you select OS in installer.
 
@@ -26,7 +26,9 @@ Pre-configure your installation by pressing CTRL+SHIFT+X after you select OS in 
 - Locale settings
 
 2. Boot your RPi with SD-card
+
 3. Update your system
+
 4. Configure & enable interfaces
 
 ```sudo raspi-config```
@@ -36,6 +38,7 @@ Pre-configure your installation by pressing CTRL+SHIFT+X after you select OS in 
 - Enable 1-wire
 - Enable I2C
 - Enable Camera
+
 
 5. Install Node-RED
 
