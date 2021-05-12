@@ -27,9 +27,9 @@ Pre-configure your installation by pressing CTRL+SHIFT+X after you select OS in 
 
 ### 2. Boot your RPi with SD-card
 
-3. Update your system
+### 3. Update your system
 
-4. Configure & enable interfaces
+### 4. Configure & enable interfaces
 
 ```sudo raspi-config```
 
@@ -40,15 +40,49 @@ Pre-configure your installation by pressing CTRL+SHIFT+X after you select OS in 
 - Enable Camera
 
 
-5. Install Node-RED
+### 5. Install Node-RED
 
 ```bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)```
 
-6. Install or update Python & Picamera
+### 6. Configure Node-RED to autostart on boot
+
+```sudo systemctl enable nodered.service```
+
+### 7. Install Node-RED libraries that are often needed
+```cd ~./node-red
+npm install node-red-auth-github &&
+npm install node-red-dashboard && 
+npm install node-red-node-base64 &&
+npm install node-red-node-cf-cloudant && 
+npm install node-red-node-daemon &&
+npm install node-red-node-email && 
+npm install node-red-node-exif && 
+npm install node-red-node-rbe &&
+npm install node-red-node-smooth &&
+npm install node-red-node-suncalc && 
+npm install node-red-contrib-aggregator && 
+npm install node-red-contrib-binary && 
+npm install node-red-contrib-buffer-parser && 
+npm install node-red-contrib-calc &&
+npm install node-red-contrib-camerapi && 
+npm install node-red-contrib-cos && 
+npm install node-red-contrib-counter &&
+npm install node-red-contrib-fs && 
+npm install node-red-contrib-fs-ops && 
+npm install node-red-contrib-ibm-watson-iot &&
+npm install node-red-contrib-image-info &&
+npm install node-red-contrib-image-output &&
+npm install node-red-contrib-modbus && 
+npm install node-red-contrib-moment && 
+npm install node-red-contrib-scx-ibmiotapp &&
+npm install node-red-contrib-sunevents  
+```
+
+### 8. Install or update Python & Picamera
 
 ```sudo apt-get install python-picamera python3-picamera```
 
-7. Install &configure hardware watchdog
+### 9. Install &configure hardware watchdog
 
 ```sudo su
 echo 'dtparam=watchdog=on' >> /boot/config.txt
