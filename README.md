@@ -1,11 +1,10 @@
 # tequ-rpi-setup
 Raspberry PI 3/4 preparation for basic DAQ usage. 
 
-| Software      | Version       | 
+| Software      |               | 
 | ------------- |:-------------:| 
 | node-red	    | 	            |
 | node.js       |               |
-| tfjs-node-gpu |               | 
 | python        |               | 
 
 
@@ -90,14 +89,27 @@ npm install node-red-contrib-sunevents
 
 https://nodered.org/docs/user-guide/runtime/securing-node-red
 
+BCrypted password creation:
 ```
 cd ~/.node-red 
 
 node-red-admin hash-pw
 ```
 
+Edit /.node-red/settings.js and replace password 
 
-
+```
+adminAuth: {
+    type: "credentials",
+    users: [
+        {
+            username: "admin",
+            password: "$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN.",
+            permissions: "*"
+        }
+    ]
+}
+```
 
 ### 10. Install or update Python & Picamera
 
