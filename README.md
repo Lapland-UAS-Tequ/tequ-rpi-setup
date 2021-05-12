@@ -31,7 +31,8 @@ Pre-configure your installation by pressing CTRL+SHIFT+X after you select OS in 
 
 4. Configure & enable interfaces
 
-```sudo raspi-config```
+```sudo raspi-config
+```
 
 - Enable Serial port (without console)
 - Enable SSH
@@ -42,11 +43,13 @@ Pre-configure your installation by pressing CTRL+SHIFT+X after you select OS in 
 
 5. Install Node-RED
 
-```bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)```
+```bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+```
 
 6. Install or update Python & Picamera
 
-```sudo apt-get install python-picamera python3-picamera```
+```sudo apt-get install python-picamera python3-picamera
+```
 
 7. Install &configure hardware watchdog
 
