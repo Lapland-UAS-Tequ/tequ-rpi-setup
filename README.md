@@ -53,6 +53,12 @@ bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/mast
 sudo systemctl enable nodered.service
 ```
 
+```
+reboot
+```
+
+Open browser and go to http://localhost:1880 to see if Node-RED is working.
+
 ### 7. Install Node-RED libraries that are often needed
 ```
 cd ~/.node-red
@@ -85,6 +91,11 @@ npm install node-red-contrib-multipart-stream-encoder &&
 npm install node-red-contrib-scx-ibmiotapp &&
 npm install node-red-contrib-sunevents  
 ```
+
+```
+node-red-restart
+```
+
 ### 8. Secure Node-RED editor 
 
 https://nodered.org/docs/user-guide/runtime/securing-node-red
@@ -92,7 +103,9 @@ https://nodered.org/docs/user-guide/runtime/securing-node-red
 BCrypted password creation:
 ```
 cd ~/.node-red 
+```
 
+```
 node-red-admin hash-pw
 ```
 
@@ -111,13 +124,13 @@ adminAuth: {
 }
 ```
 
-### 9. Install or update Python & Picamera
+### 9. Install Python & Picamera
 
 ```
 sudo apt-get install python-picamera python3-picamera
 ```
 
-### 10. Install &configure hardware watchdog
+### 10. Install & configure hardware watchdog
 
 ```
 sudo su
