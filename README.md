@@ -26,7 +26,11 @@ Pre-configure your installation by pressing CTRL+SHIFT+X after you select OS in 
 
 ### 2. Boot your RPi with SD-card
 
-### 3. Update your system
+Shutdown your Raspberry. Insert SD-card. Plug in keyboard, mouse, display and power cable.
+
+### 3. Update & configure your system
+
+Follow wizard appearing to screen after first boot.
 
 ### 4. Configure & enable interfaces
 
