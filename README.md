@@ -162,7 +162,12 @@ sudo systemctl status watchdog
 
 ## (Optional) Transfer Raspberry Pi OS to SSD 
 
-If you want to use the RPI without the SD card, you can transfer to RPI OS to an external USB, SSD or HDD. This will make it run a bit faster, when using it for anything data related.
+Tested with:
+- Raspberry PI 4
+- Argon ONE M.2 Aluminum Case for Raspberry Pi 4 - With SSD support via M.2
+- Samsung MZ-N6E250BW - SSD 860 EVO M.2 250GB SATA 6 Gb/s
+
+If you want to use the RPI without the SD card, you can transfer to RPI OS to an external USB, SSD or HDD. This will make it run a lot faster, when using it for anything data related.
 
 ### Open the Raspberry Pi config menu
 ```
