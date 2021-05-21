@@ -160,4 +160,19 @@ sudo systemctl start watchdog
 sudo systemctl status watchdog
 ```
 
+## (Optional) Transfer Raspberry Pi OS to SSD 
 
+If you want to use the RPI without the SD card, you can transfer to RPI OS to an external USB, SSD or HDD. This will make it run a bit faster, when using it for anything data related.
+
+### Open the Raspberry Pi config menu
+```
+sudo raspi-config
+```
+- Select Advanced options
+- In Advanced options, select Bootloader version and select Latest, click yes if asked.
+- Now close out of the config menu and reboot.
+- Once rebooted, reopen the config menu and go back to Advanced options.
+- Now select Boot Order and select USB Boot, then exit and reboot.
+- Now you can connect your SSD or HDD.
+- Open SD Card Copier from the accessories tab, then select your source and destination and start.
+- Once copying is finished you can shutdown the Pi and remove the SD card, it should now boot up without it.
