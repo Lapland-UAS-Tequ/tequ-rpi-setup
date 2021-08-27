@@ -1,10 +1,10 @@
 # tequ-rpi-setup
 Raspberry PI 3/4 preparation for basic DAQ usage. 
 
-| Software      |               | 
+| Software      |            | 
 | ------------- |:-------------:| 
-| node-red	    | 	            |
-| node.js       |               |
+| node-red	    | 2.0.5   |
+| node.js       |         |
 | python        |               | 
 
 
@@ -181,3 +181,25 @@ sudo raspi-config
 - Now you can connect your SSD or HDD.
 - Open SD Card Copier from the accessories tab, then select your source and destination and start.
 - Once copying is finished you can shutdown the Pi and remove the SD card, it should now boot up without it.
+
+
+## (Optional) Install Tensorflow & Canvas for Object Detection in Node-RED
+
+```
+cd ~/.node-red
+```
+
+```
+npm install @tensorflow/tfjs-node-gpu
+```
+
+```
+sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+```
+
+```
+npm install canvas
+```
+
+Go to https://github.com/juhaautioniemi/tequ-api-client for example flows
+
