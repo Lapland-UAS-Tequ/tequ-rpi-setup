@@ -1,5 +1,5 @@
 # tequ-rpi-setup
-Raspberry PI 3/4 preparation for basic DAQ usage. 
+Raspberry PI 3/4 preparation for DAQ & AI usage. 
 
 | Software      | Version       | 
 | ------------- |:-------------:| 
