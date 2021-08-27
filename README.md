@@ -1,6 +1,12 @@
 # tequ-rpi-setup
 Raspberry PI 3/4 preparation for basic DAQ usage. 
 
+| Software      | Version       | 
+| ------------- |:-------------:| 
+| node.js       | 14.17.5       |
+| node-red	    | 2.0.5	        |
+| tfjs-node-gpu | 3.8.0	        | 
+
 ## Actions
 
 ### 1. Prepare Raspberry Pi OS SD-card with Raspberry Pi Imager
@@ -152,6 +158,24 @@ sudo systemctl start watchdog
 sudo systemctl status watchdog
 ```
 
+### 11. Update node.js to version 14 (if not yet 14)
+
+```
+sudo apt update
+```
+
+```
+sudo apt-get update
+```
+
+```
+curl -sSL https://deb.nodesource.com/setup_14.x | sudo bash -
+```
+
+```
+sudo apt-get install -y nodejs
+```
+
 ## (Optional) Transfer Raspberry Pi OS to SSD 
 
 Tested with:
@@ -186,12 +210,15 @@ npm install @tensorflow/tfjs-node-gpu
 ```
 
 ```
+sudo npm install --global node-pre-gyp
+```
+
+```
 sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
 ```
 
 ```
-npm install canvas
+npm install canvas 
 ```
 
-Go to https://github.com/juhaautioniemi/tequ-api-client for example flows
-
+Go to https://github.com/juhaautioniemi/tequ-api-client for example flows how to use tensorflow
