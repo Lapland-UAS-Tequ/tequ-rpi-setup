@@ -1,14 +1,6 @@
 # tequ-rpi-setup
 Raspberry PI 3/4 preparation for basic DAQ usage. 
 
-| Software      |            | 
-| ------------- |:-------------:| 
-| node-red	    | 2.0.5   |
-| node.js       |         |
-| python        |               | 
-
-
-
 ## Actions
 
 ### 1. Prepare Raspberry Pi OS SD-card with Raspberry Pi Imager
