@@ -223,4 +223,4 @@ sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev l
 npm install canvas 
 ```
 
-Go to https://github.com/juhaautioniemi/tequ-api-client for example flows how to use tensorflow
+Go to https://github.com/Lapland-UAS-Tequ/tequ-api-client for example flows how to use tensorflow
