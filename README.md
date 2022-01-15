@@ -1,3 +1,8 @@
+This repository is developed in Fish-IoT project
+
+https://www.tequ.fi/en/project-bank/fish-iot/ 
+
+---
 # tequ-rpi-setup
 Raspberry PI 3/4 preparation for DAQ & AI usage. 
 
