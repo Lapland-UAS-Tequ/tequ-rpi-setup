@@ -268,7 +268,7 @@ sudo chmod 755 /opt/pylon
 ```
 
 ```
-sudo /opt/pylon/share/pylon/setup-usb.sh.
+sudo /opt/pylon/share/pylon/setup-usb.sh
 ```
 
 ```
