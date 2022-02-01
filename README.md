@@ -272,13 +272,5 @@ sudo /opt/pylon/share/pylon/setup-usb.sh
 ```
 
 ```
-cd $home/pylon_setup
-```
-
-```
-wget https://tequ-files.s3.eu.cloud-object-storage.appdomain.cloud/pypylon-1.7.4-cp34-cp34m-linux_armv7l.whl
-```
-
-```
-pip install pypylon-1.7.4-cp34-cp34m-linux_armv7l.whl
+pip3 instal pypylon
 ```
