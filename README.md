@@ -8,9 +8,9 @@ Raspberry PI 3/4 preparation for DAQ & AI usage.
 
 | Software      | Version       | 
 | ------------- |:-------------:| 
-| node.js       | 14.17.5       |
+| node.js       | 16.13.1       |
 | node-red	    | 2.2.0	        |
-| tfjs-node-gpu | 3.8.0	        | 
+| tfjs-node-gpu | 3.13.0	    | 
 
 ## Actions
 
@@ -165,7 +165,7 @@ sudo systemctl start watchdog
 sudo systemctl status watchdog
 ```
 
-### 11. Update node.js to version 14 (if not yet 14)
+### 11. Update node.js to version 16
 
 ```
 sudo apt update
@@ -176,7 +176,7 @@ sudo apt-get update
 ```
 
 ```
-curl -sSL https://deb.nodesource.com/setup_14.x | sudo bash -
+curl -sSL https://deb.nodesource.com/setup_16.x | sudo bash -
 ```
 
 ```
