@@ -260,7 +260,7 @@ sudo mkdir /opt/pylon
 ```
 
 ```
-sudo tar -C /opt/pylon -xzf ./pylon_6.2.0.21487_armhf_setup.tar.gz
+sudo tar -C /opt/pylon -xzf ././pylon_6.2.0.21487_armhf.tar.gz
 ```
 
 ```
