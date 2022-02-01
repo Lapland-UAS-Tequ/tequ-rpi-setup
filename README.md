@@ -356,3 +356,30 @@ gst-launch-1.0 pylonsrc config-file=config.pfs ! queue ! videoconvert ! jpegenc 
 More Gstremer examples:
 
 https://github.com/Lapland-UAS-Tequ/tequ-basler-gstreamer
+
+# (Optional) Install RTSP Simple server
+
+```
+cd $home
+```
+
+```
+mkdir rtsp-simple-server
+```
+
+```
+cd rtsp-simple-server
+```
+
+```
+wget https://tequ-files.s3.eu.cloud-object-storage.appdomain.cloud/rtsp-simple-server_v0.17.15_linux_armv7.tar.gz
+```
+
+```
+tar -zxvf rtsp-simple-server_v0.17.15_linux_armv7.tar.gz
+```
+
+```
+rtsp-simple-server
+```
+
