@@ -8,7 +8,7 @@ Raspberry PI 3/4 preparation for DAQ & AI usage.
 
 | Software      | Version       | 
 | ------------- |:-------------:| 
-| node.js       | 16.13.1       |
+| node.js       | 16.13.2       |
 | node-red	    | 2.2.0	        |
 | tfjs-node-gpu | 3.13.0	    | 
 
@@ -91,7 +91,6 @@ npm install node-red-contrib-fs-ops &&
 npm install node-red-contrib-ibm-watson-iot &&
 npm install node-red-contrib-image-info &&
 npm install node-red-contrib-image-output &&
-npm install node-red-contrib-modbus && 
 npm install node-red-contrib-moment && 
 npm install node-red-contrib-multipart-stream-decoder &&
 npm install node-red-contrib-multipart-stream-encoder &&
