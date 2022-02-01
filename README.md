@@ -9,7 +9,7 @@ Raspberry PI 3/4 preparation for DAQ & AI usage.
 | Software      | Version       | 
 | ------------- |:-------------:| 
 | node.js       | 14.17.5       |
-| node-red	    | 2.0.5	        |
+| node-red	    | 2.2.0	        |
 | tfjs-node-gpu | 3.8.0	        | 
 
 ## Actions
@@ -272,5 +272,5 @@ sudo /opt/pylon/share/pylon/setup-usb.sh
 ```
 
 ```
-pip3 instal pypylon
+pip3 install pypylon
 ```
