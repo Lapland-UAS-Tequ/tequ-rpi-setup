@@ -229,3 +229,56 @@ npm install canvas
 ```
 
 Go to https://github.com/Lapland-UAS-Tequ/tequ-api-client for example flows how to use tensorflow
+
+
+## (Optional) Install Basler Pylon & Pypylon & GStreamer plug-in for Basler cameras (32 bit)
+
+https://www.baslerweb.com/fp-1597837316/media/downloads/documents/application_notes/AW00162902000_How_to_Build_pylon_Applications_on_Raspberry_Pi.pdf
+
+```
+cd $home
+```
+
+```
+wget https://tequ-files.s3.eu.cloud-object-storage.appdomain.cloud/pylon_6.2.0.21487_armhf_setup.tar.gz
+```
+
+```
+mkdir ./pylon_setup
+```
+
+```
+tar -C ./pylon_setup -xzf ./pylon_6.2.0.21487_armhf_setup.tar.gz
+```
+
+```
+cd ./pylon_setup
+```
+
+```
+sudo mkdir /opt/pylon
+```
+
+```
+sudo tar -C /opt/pylon -xzf ./pylon_6.2.0.21487_armhf_setup.tar.gz
+```
+
+```
+sudo chmod 755 /opt/pylon
+```
+
+```
+sudo /opt/pylon/share/pylon/setup-usb.sh.
+```
+
+```
+cd $home/pylon_setup
+```
+
+```
+wget https://tequ-files.s3.eu.cloud-object-storage.appdomain.cloud/pypylon-1.7.4-cp34-cp34m-linux_armv7l.whl
+```
+
+```
+pip install pypylon-1.7.4-cp34-cp34m-linux_armv7l.whl
+```
