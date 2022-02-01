@@ -214,6 +214,15 @@ cd ~/.node-red
 npm install @tensorflow/tfjs-node-gpu
 ```
 
+
+```
+node
+```
+
+```
+var tf = require('@tensorflow/tfjs-node-gpu')
+```
+
 ```
 sudo npm install --global node-pre-gyp
 ```
@@ -272,3 +281,5 @@ sudo /opt/pylon/share/pylon/setup-usb.sh
 ```
 pip3 install pypylon
 ```
+
+
