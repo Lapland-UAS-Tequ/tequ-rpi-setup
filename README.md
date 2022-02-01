@@ -353,9 +353,13 @@ Example pipelines, depending on camera settings
 gst-launch-1.0 pylonsrc config-file=config.pfs ! queue ! videoconvert ! jpegenc ! queue ! tcpclientsink port=55555
 ```
 
-More Gstremer examples:
+More Gstremer examples for Basler cameras:
 
 https://github.com/Lapland-UAS-Tequ/tequ-basler-gstreamer
+
+# (Optional) Use GStreamer with native Raspberry PI HQ camera
+
+
 
 # (Optional) Install RTSP Simple server
 
