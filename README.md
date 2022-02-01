@@ -76,7 +76,6 @@ npm install node-red-node-cf-cloudant &&
 npm install node-red-node-daemon &&
 npm install node-red-node-email && 
 npm install node-red-node-exif && 
-npm install node-red-node-image-info && 
 npm install node-red-node-rbe &&
 npm install node-red-node-smooth &&
 npm install node-red-node-suncalc && 
