@@ -238,7 +238,7 @@ npm install canvas
 Go to https://github.com/Lapland-UAS-Tequ/tequ-api-client for example flows how to use tensorflow
 
 
-## (Optional) Install Basler Pylon & Pypylon & GStreamer plug-in for Basler cameras (32 bit)
+## (Optional) Install Basler Pylon & Pypylon
 
 https://www.baslerweb.com/fp-1597837316/media/downloads/documents/application_notes/AW00162902000_How_to_Build_pylon_Applications_on_Raspberry_Pi.pdf
 
@@ -283,3 +283,76 @@ pip3 install pypylon
 ```
 
 
+# (Optional) Install Gstreamer plugin for Basler cameras 
+
+```
+sudo apt-get install git cmake libgstreamer-plugins-base1.0-dev liborc-0.4-dev gstreamer1.0-tools libx264-dev libjpeg-dev
+```
+
+```
+sudo apt-get install libgstreamer1.0-dev \
+     libgstreamer-plugins-base1.0-dev \
+     libgstreamer-plugins-bad1.0-dev \
+     gstreamer1.0-plugins-ugly \
+     gstreamer1.0-tools \
+     gstreamer1.0-gl \
+     gstreamer1.0-gtk3
+```
+```
+git clone https://github.com/Lapland-UAS-Tequ/gst-plugins-vision
+```
+
+```
+cd gst-plugins-vision
+```
+
+```
+sudo nano cmake/modules/FindPylon.cmake
+```
+
+Replace "/opt/pylon5" => "/opt/pylon"
+
+```
+mkdir build
+```
+
+```
+cd build
+```
+
+Directory might be different on your device, check where gstreamer-1.0 folder is located
+
+```
+cmake -DCMAKE_INSTALL_PREFIX=/usr/lib/arm-linux-gnueabihf ..
+```
+
+```
+make
+```
+
+```
+sudo make install
+```
+
+```
+sudo nano /etc/ld.so.conf.d/pylon.conf
+```
+
+Add following path to the file:
+
+```
+/opt/pylon/lib
+```
+
+```
+sudo ldconfig
+```
+
+Example pipelines, depending on camera settings
+```
+gst-launch-1.0 pylonsrc config-file=config.pfs ! queue ! videoconvert ! jpegenc ! queue ! tcpclientsink port=55555
+```
+
+More Gstremer examples:
+
+https://github.com/Lapland-UAS-Tequ/tequ-basler-gstreamer
