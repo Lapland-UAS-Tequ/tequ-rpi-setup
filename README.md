@@ -166,11 +166,11 @@ sudo systemctl status watchdog
 ### 11. Update node.js to version 16
 
 ```
-sudo apt update
+sudo apt-get update
 ```
 
 ```
-sudo apt-get update
+sudo apt-get upgrade
 ```
 
 ```
