@@ -359,7 +359,7 @@ https://github.com/Lapland-UAS-Tequ/tequ-basler-gstreamer
 
 # (Optional) Use GStreamer with native Raspberry PI HQ camera
 
-
+TBD
 
 # (Optional) Install RTSP Simple server
 
