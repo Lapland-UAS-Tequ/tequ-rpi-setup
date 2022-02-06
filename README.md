@@ -83,7 +83,6 @@ npm install node-red-contrib-aggregator &&
 npm install node-red-contrib-binary && 
 npm install node-red-contrib-buffer-parser && 
 npm install node-red-contrib-calc &&
-npm install node-red-contrib-camerapi && 
 npm install node-red-contrib-cos && 
 npm install node-red-contrib-counter &&
 npm install node-red-contrib-fs && 
