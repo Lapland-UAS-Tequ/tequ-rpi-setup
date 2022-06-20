@@ -8,8 +8,8 @@ Raspberry PI 3/4 preparation for DAQ & AI usage.
 
 | Software      | Version       | 
 | ------------- |:-------------:| 
-| node.js       | 16.13.2       |
-| node-red	    | 2.2.0	        |
+| node.js       | 16.15.1       |
+| node-red	    | 2.2.2	        |
 | tfjs-node-gpu | 3.13.0	    | 
 
 ## Actions
@@ -20,29 +20,22 @@ https://www.raspberrypi.org/software/
 
 32 GB SD-card is preferable
 
-Pre-configure your installation by pressing CTRL+SHIFT+X after you select OS in installer.
+Preconfigure your installation by pressing CTRL+SHIFT+X after you select OS in installer.
 
 - SSH
 - Hostname
 - WiFi
 - Locale settings
 
-### 2. Boot your RPi with SD-card
+### 2. Booting and configuration
 
-Shutdown your Raspberry. Insert SD-card. Plug in keyboard, mouse, display and power cable.
-
-### 3. Update & configure your system
-
-Follow wizard appearing to screen after first boot.
-
-### 4. Configure & enable interfaces
+Insert the SD card in and connect to power. Then connect to the RPI via SSH with your preconfigured settings, once connected follow below steps.
 
 ```
 sudo raspi-config
 ```
 
-- Enable Serial port (without console)
-- Enable SSH
+- Enable Serial port
 - Enable 1-wire
 - Enable I2C
 - Enable Camera
@@ -58,13 +51,13 @@ bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/mast
 
 ```
 sudo systemctl enable nodered.service
+sudo reboot
 ```
 
+Open browser and go to http://localhost:1880 to see if Node-RED is working. If not, run:
 ```
-reboot
+node-red-start
 ```
-
-Open browser and go to http://localhost:1880 to see if Node-RED is working.
 
 ### 7. Install Node-RED libraries that are often needed
 ```
