@@ -14,11 +14,16 @@ Raspberry PI 3/4 preparation for DAQ & AI usage.
 
 ## Actions
 
-### 1. Prepare Raspberry Pi OS SD-card with Raspberry Pi Imager
+### 1. Prepare Raspberry Pi OS SD-card or SSD with Raspberry Pi Imager
+
+## NOTE!
+If you want to use an SSD for faster read/write speeds, you can connect an SSD to your device and select that instead of an SD card. The process will be completely the same otherwise.
+
+---
 
 https://www.raspberrypi.org/software/
 
-32 GB SD-card is preferable
+32 GB SD-card/SSD is preferable, or better.
 
 Preconfigure your installation by pressing CTRL+SHIFT+X after you select OS in installer.
 
@@ -29,7 +34,8 @@ Preconfigure your installation by pressing CTRL+SHIFT+X after you select OS in i
 
 ### 2. Booting and configuration
 
-Insert the SD card in and connect to power. Then connect to the RPI via SSH with your preconfigured settings, once connected follow below steps.
+Insert the SD card in the RPI or the SSD into a USB port. 
+Then connect to the RPI via SSH with your preconfigured settings, once connected follow below steps.
 
 ```
 sudo raspi-config
@@ -39,6 +45,8 @@ sudo raspi-config
 - Enable 1-wire
 - Enable I2C
 - Enable Camera
+
+Remember to reboot after enabling settings.
 
 
 ### 5. Install Node-RED
@@ -97,37 +105,27 @@ node-red-restart
 
 ### 8. Secure Node-RED editor 
 
-https://nodered.org/docs/user-guide/runtime/securing-node-red
-
-BCrypted password creation:
-```
-cd ~/.node-red 
-```
+Create users and setup passwords.
 
 ```
-node-red admin hash-pw
+node-red admin init
 ```
 
-Edit /.node-red/settings.js and replace password in "adminAuth"
+### 9. Using a camera
+
+To use a camera with the RPI, you'll need the libcamera library, it should come preinstalled, but if not run:
 
 ```
-adminAuth: {
-    type: "credentials",
-    users: [
-        {
-            username: "admin",
-            password: "$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN.",
-            permissions: "*"
-        }
-    ]
-}
+sudo apt install libcamera-apps
+sudo reboot
 ```
 
-### 9. Install Python & Picamera
+To test that everything is working, plug in a monitor and the camera and run:
+```
+libcamera-hello
+```
+If you see the camera view on your monitor, then the camera is working.
 
-```
-sudo apt-get install python-picamera python3-picamera
-```
 
 ### 10. Install & configure hardware watchdog
 
@@ -138,8 +136,8 @@ reboot
 ```
 
 ```
-sudo apt-get update
-sudo apt-get install watchdog
+sudo apt update
+sudo apt install watchdog
 ```
 
 ```
@@ -158,43 +156,11 @@ sudo systemctl status watchdog
 ### 11. Update node.js to version 16
 
 ```
-sudo apt-get update
-```
-
-```
-sudo apt-get upgrade
-```
-
-```
+sudo apt update
+sudo apt upgrade
 curl -sSL https://deb.nodesource.com/setup_16.x | sudo bash -
+sudo apt install -y nodejs
 ```
-
-```
-sudo apt-get install -y nodejs
-```
-
-## (Optional) Transfer Raspberry Pi OS to SSD 
-
-Tested with:
-- Raspberry PI 4
-- Argon ONE M.2 Aluminum Case for Raspberry Pi 4 - With SSD support via M.2
-- Samsung MZ-N6E250BW - SSD 860 EVO M.2 250GB SATA 6 Gb/s
-
-If you want to use the RPI without the SD card, you can transfer to RPI OS to an external USB, SSD or HDD. This will make it run a lot faster, when using it for anything data related.
-
-### Open the Raspberry Pi config menu
-```
-sudo raspi-config
-```
-- Select Advanced options
-- In Advanced options, select Bootloader version and select Latest, click yes if asked.
-- Now close out of the config menu and reboot.
-- Once rebooted, reopen the config menu and go back to Advanced options.
-- Now select Boot Order and select USB Boot, then exit and reboot.
-- Now you can connect your SSD or HDD.
-- Open SD Card Copier from the accessories tab, then select your source and destination and start.
-- Once copying is finished you can shutdown the Pi and remove the SD card, it should now boot up without it.
-
 
 ## (Optional) Install Tensorflow & Canvas for Object Detection in Node-RED
 
