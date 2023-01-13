@@ -8,8 +8,8 @@ Raspberry PI 3/4 preparation for DAQ & AI usage.
 
 | Software      | Version       | 
 | ------------- |:-------------:| 
-| node.js       | 16.15.1       |
-| node-red	    | 2.2.2	        |
+| node.js       | 18.12.1       |
+| node-red	    | 3.0.2      |
 | tfjs-node-gpu | 3.13.0	    | 
 
 ## Actions
@@ -49,13 +49,13 @@ sudo raspi-config
 Remember to reboot after enabling settings.
 
 
-### 5. Install Node-RED
+### 3. Install Node-RED
 
 ```
 bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
 ```
 
-### 6. Configure Node-RED to autostart on boot
+### 4. Configure Node-RED to autostart on boot
 
 ```
 sudo systemctl enable nodered.service
@@ -67,7 +67,7 @@ Open browser and go to http://localhost:1880 to see if Node-RED is working. If n
 node-red-start
 ```
 
-### 7. Install Node-RED libraries that are often needed
+### 5. Install Node-RED libraries that are often needed
 ```
 cd ~/.node-red
 npm install node-red-auth-github &&
@@ -103,7 +103,7 @@ npm install node-red-contrib-sunevents
 node-red-restart
 ```
 
-### 8. Secure Node-RED editor 
+### 6. Secure Node-RED editor 
 
 Create users and setup passwords.
 
@@ -111,7 +111,7 @@ Create users and setup passwords.
 node-red admin init
 ```
 
-### 9. Using a camera
+### 7. Using a camera
 
 To use a camera with the RPI, you'll need the libcamera library, it should come preinstalled, but if not run:
 
@@ -127,7 +127,7 @@ libcamera-hello
 If you see the camera view on your monitor, then the camera is working.
 
 
-### 10. Install & configure hardware watchdog
+### 8. Install & configure hardware watchdog
 
 ```
 sudo su
@@ -153,7 +153,7 @@ sudo systemctl start watchdog
 sudo systemctl status watchdog
 ```
 
-### 11. Update node.js to version 16
+### 9. Update node.js to version 16
 
 ```
 sudo apt update
@@ -172,6 +172,9 @@ cd ~/.node-red
 npm install @tensorflow/tfjs-node-gpu
 ```
 
+```
+npm rebuild @tensorflow/tfjs-node-gpu --build-from-source
+```
 
 ```
 node
