@@ -164,12 +164,13 @@ sudo apt install -y nodejs
 
 ## (Optional) Install Tensorflow & Canvas for Object Detection in Node-RED
 
+Tensorflow tjfs-node-gpu installation
 ```
 cd ~/.node-red
 ```
 
 ```
-npm install @tensorflow/tfjs-node-gpu
+npm install --ignore-scripts @tensorflow/tfjs-node-gpu
 ```
 
 ```
@@ -184,6 +185,7 @@ node
 var tf = require('@tensorflow/tfjs-node-gpu')
 ```
 
+Canvas installation
 ```
 sudo npm install --global node-pre-gyp
 ```
