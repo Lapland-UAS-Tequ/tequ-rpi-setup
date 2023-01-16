@@ -247,7 +247,7 @@ pip3 install pypylon
 # (Optional) Install Gstreamer plugin for Basler cameras 
 
 
-***Tähän pitää tehdä Basler gst-pylon asennusohjeet***
+***Tähän pitää tehdä Basler gst-pylon asennusohjeet, ei ole näitä valmiina olemassa***
 
 https://github.com/basler/gst-plugin-pylon
 
