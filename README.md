@@ -10,7 +10,10 @@ Raspberry PI 3/4 preparation for DAQ & AI usage.
 | ------------- |:-------------:| 
 | node.js       | 18.12.1       |
 | node-red	    | 3.0.2      |
-| tfjs-node-gpu | 3.13.0	    | 
+| tfjs-node-gpu | 3.13.0	    |
+| pylon         | 7.2.1      |
+
+It is optimal to have an remote desktop connection to the RPI.
 
 ## Actions
 
@@ -24,6 +27,8 @@ If you want to use an SSD for faster read/write speeds, you can connect an SSD t
 https://www.raspberrypi.org/software/
 
 32 GB SD-card/SSD is preferable, or better.
+
+Use 64 bit version.
 
 Preconfigure your installation by pressing CTRL+SHIFT+X after you select OS in installer.
 
@@ -153,20 +158,20 @@ sudo systemctl start watchdog
 sudo systemctl status watchdog
 ```
 
-### 9. Update node.js to version 16
+### 9. Update node.js to version 18
 
 ```
 sudo apt update
 sudo apt upgrade
-curl -sSL https://deb.nodesource.com/setup_16.x | sudo bash -
-sudo apt install -y nodejs
+curl -sSL https://deb.nodesource.com/setup_18.x | sudo bash -
+sudo apt-get install -y nodejs
 ```
 
 ## (Optional) Install Tensorflow & Canvas for Object Detection in Node-RED
 
 Tensorflow tjfs-node-gpu installation
 ```
-cd ~/.node-red
+cd .node-red
 ```
 
 ```
@@ -203,14 +208,18 @@ Go to https://github.com/Lapland-UAS-Tequ/tequ-api-client for example flows how 
 
 ## (Optional) Install Basler Pylon & Pypylon
 
-https://www.baslerweb.com/fp-1597837316/media/downloads/documents/application_notes/AW00162902000_How_to_Build_pylon_Applications_on_Raspberry_Pi.pdf
+https://www.baslerweb.com/en/downloads/software-downloads/pylon-7-2-1-linux-arm-64-bit/
+https://www.baslerweb.com/en/downloads/software-downloads/software-pylon-7-2-1-linux-arm-64bit-debian/ - Debian package is much easier to install.
+Instructions: 
+- https://www.baslerweb.com/fp-1666012566/media/downloads/software/pylon_software/INSTALL~9.txt
+- https://www.baslerweb.com/fp-1597837316/media/downloads/documents/application_notes/AW00162902000_How_to_Build_pylon_Applications_on_Raspberry_Pi.pdf
 
 ```
-cd $home
+The usb camera must be plugged into 3.0 usb outlet.
 ```
 
 ```
-wget https://tequ-files.s3.eu.cloud-object-storage.appdomain.cloud/pylon_6.2.0.21487_armhf_setup.tar.gz
+cd
 ```
 
 ```
@@ -218,7 +227,7 @@ mkdir ./pylon_setup
 ```
 
 ```
-tar -C ./pylon_setup -xzf ./pylon_6.2.0.21487_armhf_setup.tar.gz
+tar -C ./pylon_setup -xzf ./pylon_7.2.1.25747_aarch64_setup.tar.gz
 ```
 
 ```
@@ -230,7 +239,7 @@ sudo mkdir /opt/pylon
 ```
 
 ```
-sudo tar -C /opt/pylon -xzf ././pylon_6.2.0.21487_armhf.tar.gz
+sudo tar -C /opt/pylon -xzf ./pylon_7.2.1.25747_aarch64_setup.tar.gz
 ```
 
 ```
@@ -245,6 +254,10 @@ sudo /opt/pylon/share/pylon/setup-usb.sh
 pip3 install pypylon
 ```
 
+```
+To find pylonviewer, navigate to: /opt/pylon/bin/pylonviewer
+Open pylonviewer with pylon Viewer application which is under Sound & Video category.
+```
 
 # (Optional) Install Gstreamer plugin for Basler cameras 
 
