@@ -209,6 +209,7 @@ Go to https://github.com/Lapland-UAS-Tequ/tequ-api-client for example flows how 
 ## (Optional) Install Basler Pylon & Pypylon
 
 https://www.baslerweb.com/en/downloads/software-downloads/pylon-7-2-1-linux-arm-64-bit/
+
 https://www.baslerweb.com/en/downloads/software-downloads/software-pylon-7-2-1-linux-arm-64bit-debian/ - Debian package is much easier to install.
 Instructions: 
 - https://www.baslerweb.com/fp-1666012566/media/downloads/software/pylon_software/INSTALL~9.txt
@@ -256,30 +257,112 @@ pip3 install pypylon
 
 ```
 To find pylonviewer, navigate to: /opt/pylon/bin/pylonviewer
-Open pylonviewer with pylon Viewer application which is under Sound & Video category.
+Open pylonviewer with "pylon Viewer" application which is under Sound & Video category.
 ```
 
 # (Optional) Install Gstreamer plugin for Basler cameras 
 
-
-***Tähän pitää tehdä Basler gst-pylon asennusohjeet, ei ole näitä valmiina olemassa***
+https://github.com/Lapland-UAS-Tequ/tequ-basler-gstreamer
 
 https://github.com/basler/gst-plugin-pylon
 
+```
+sudo apt remove meson ninja-build
+```
 
+```
+sudo -H python3 -m pip install meson ninja --upgrade
+```
+
+```
+sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev cmake
+```
+
+```
+export PYLON_ROOT=/opt/pylon
+```
+
+```
+git clone https://github.com/basler/gst-plugin-pylon.git
+```
+
+```
+cd gst-plugin-pylon
+```
+
+```
+meson setup builddir --prefix /usr/
+```
+
+```
+ninja -C builddir
+```
+
+```
+ninja -C builddir test
+```
+
+```
+sudo ninja -C builddir install
+```
+
+```
+gst-inspect-1.0 pylonsrc
+```
+
+```
+cd gst-plugin-pylon
+```
+
+```
+sudo git clone https://gitlab.freedesktop.org/gstreamer/gstreamer -b 1.20
+```
+
+```
+cd gstreamer
+```
+
+```
+cd subprojects/
+```
+
+```
+sudo git clone https://github.com/basler/gst-plugin-pylon
+```
+
+```
+cd -
+```
+
+```
+sudo PYLON_ROOT=/opt/pylon meson setup builddir --prefix /usr -Dcustom_subprojects=gst-plugin-pylon
+```
+
+You might have to use **'meson setup --wipe builddir'** after previous command if you run into errors.
+```
+ninja -C builddir
+```
+
+```
+gst-inspect-1.0 pylonsrc
+To leave the shell, type 'exit'. However it is suggested to execute next command.
+```
+
+```
+meson setup builddir --prefix /usr/ --werror --buildtype=debug -Dgobject-cast-checks=enabled -Dglib-asserts=enabled -Dglib-checks=enabled
+```
 
 Example pipelines, depending on camera settings
 ```
 gst-launch-1.0 pylonsrc config-file=config.pfs ! queue ! videoconvert ! jpegenc ! queue ! tcpclientsink port=55555
 ```
 
-More Gstremer examples for Basler cameras:
-
-https://github.com/Lapland-UAS-Tequ/tequ-basler-gstreamer
-
 # (Optional) Use GStreamer with native Raspberry PI HQ camera
 
 TBD
+
+jatkan tätä huomenna
+https://platypus-boats.readthedocs.io/en/latest/source/rpi/video/video-streaming-gstreamer.html
 
 # (Optional) Install RTSP Simple server
 
