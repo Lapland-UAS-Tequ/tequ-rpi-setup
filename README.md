@@ -58,6 +58,10 @@ Remember to reboot after enabling settings.
 
 ```
 bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+``` 
+Create users and setup passwords. If you selected no during the setup, run the command below.
+```
+node-red admin init
 ```
 
 ### 4. Configure Node-RED to autostart on boot
@@ -108,15 +112,7 @@ npm install node-red-contrib-sunevents
 node-red-restart
 ```
 
-### 6. Secure Node-RED editor 
-
-Create users and setup passwords.
-
-```
-node-red admin init
-```
-
-### 7. Using a camera
+### 6. Using a camera
 
 To use a camera with the RPI, you'll need the libcamera library, it should come preinstalled, but if not run:
 
@@ -129,10 +125,10 @@ To test that everything is working, plug in a monitor and the camera and run:
 ```
 libcamera-hello
 ```
+Keep in mind to use the RPI terminal, not remote desktop terminal.
 If you see the camera view on your monitor, then the camera is working.
 
-
-### 8. Install & configure hardware watchdog
+### 7. Install & configure hardware watchdog
 
 ```
 sudo su
@@ -158,7 +154,7 @@ sudo systemctl start watchdog
 sudo systemctl status watchdog
 ```
 
-### 9. Update node.js to version 18
+### 8. Update node.js to version 18
 
 ```
 sudo apt update
@@ -205,6 +201,31 @@ npm install canvas
 
 Go to https://github.com/Lapland-UAS-Tequ/tequ-api-client for example flows how to use tensorflow
 
+# (Optional) Install RTSP Simple server
+
+```
+cd $home
+```
+
+```
+mkdir rtsp-simple-server
+```
+
+```
+cd rtsp-simple-server
+```
+
+```
+wget https://tequ-files.s3.eu.cloud-object-storage.appdomain.cloud/rtsp-simple-server_v0.17.15_linux_armv7.tar.gz
+```
+
+```
+tar -zxvf rtsp-simple-server_v0.17.15_linux_armv7.tar.gz
+```
+
+```
+./rtsp-simple-server
+```
 
 ## (Optional) Install Basler Pylon & Pypylon
 
@@ -363,30 +384,4 @@ TBD
 
 jatkan tätä huomenna
 https://platypus-boats.readthedocs.io/en/latest/source/rpi/video/video-streaming-gstreamer.html
-
-# (Optional) Install RTSP Simple server
-
-```
-cd $home
-```
-
-```
-mkdir rtsp-simple-server
-```
-
-```
-cd rtsp-simple-server
-```
-
-```
-wget https://tequ-files.s3.eu.cloud-object-storage.appdomain.cloud/rtsp-simple-server_v0.17.15_linux_armv7.tar.gz
-```
-
-```
-tar -zxvf rtsp-simple-server_v0.17.15_linux_armv7.tar.gz
-```
-
-```
-rtsp-simple-server
-```
 
