@@ -300,6 +300,10 @@ sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev cmake
 ```
 
 ```
+sudo apt-get install gstreamer1.0-tools
+```
+
+```
 export PYLON_ROOT=/opt/pylon
 ```
 
@@ -329,48 +333,6 @@ sudo ninja -C builddir install
 
 ```
 gst-inspect-1.0 pylonsrc
-```
-
-```
-cd gst-plugin-pylon
-```
-
-```
-sudo git clone https://gitlab.freedesktop.org/gstreamer/gstreamer -b 1.20
-```
-
-```
-cd gstreamer
-```
-
-```
-cd subprojects/
-```
-
-```
-sudo git clone https://github.com/basler/gst-plugin-pylon
-```
-
-```
-cd -
-```
-
-```
-sudo PYLON_ROOT=/opt/pylon meson setup builddir --prefix /usr -Dcustom_subprojects=gst-plugin-pylon
-```
-
-You might have to use **'meson setup --wipe builddir'** after previous command if you run into errors.
-```
-ninja -C builddir
-```
-
-```
-gst-inspect-1.0 pylonsrc
-To leave the shell, type 'exit'. However it is suggested to execute next command.
-```
-
-```
-meson setup builddir --prefix /usr/ --werror --buildtype=debug -Dgobject-cast-checks=enabled -Dglib-asserts=enabled -Dglib-checks=enabled
 ```
 
 Example pipelines, depending on camera settings
