@@ -288,9 +288,8 @@ Open pylonviewer with "pylon Viewer" application which is under Sound & Video ca
 
 # (Optional) Install Gstreamer plugin for Basler cameras 
 
-https://github.com/Lapland-UAS-Tequ/tequ-basler-gstreamer
-
-https://github.com/basler/gst-plugin-pylon
+Instructions at Basler github:
+- https://github.com/basler/gst-plugin-pylon
 
 ```
 sudo apt remove meson ninja-build
