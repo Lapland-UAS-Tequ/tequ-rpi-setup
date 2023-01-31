@@ -216,18 +216,18 @@ cd rtsp-simple-server
 ```
 
 ```
-wget https://tequ-files.s3.eu.cloud-object-storage.appdomain.cloud/rtsp-simple-server_v0.17.15_linux_armv7.tar.gz
+wget https://tequ-files.s3.eu.cloud-object-storage.appdomain.cloud/rtsp-simple-server_v0.21.2_linux_arm64v8.tar
 ```
 
 ```
-tar -zxvf rtsp-simple-server_v0.17.15_linux_armv7.tar.gz
+tar -zxvf rtsp-simple-server_v0.21.2_linux_arm64v8.tar
 ```
 
 ```
 ./rtsp-simple-server
 ```
 
-Install RTSP GStreamer plug-in
+Install plug-in to publish to RTSP server from GStreamer
 ```
 sudo apt install gstreamer1.0-rtsp
 ```
