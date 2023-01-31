@@ -118,6 +118,8 @@ To use a camera with the RPI, you'll need the libcamera library, it should come 
 
 ```
 sudo apt install libcamera-apps
+```
+```
 sudo reboot
 ```
 
