@@ -340,11 +340,7 @@ sudo ninja -C builddir install
 gst-inspect-1.0 pylonsrc
 ```
 
-Example pipelines, depending on camera settings
-
-```
-gst-launch-1.0 pylonsrc ! queue ! videoconvert ! jpegenc ! queue ! tcpclientsink port=55555
-```
+Example GStreamer pipelines:
 
 1. Show camera video on display
 ```
@@ -362,7 +358,14 @@ gst-launch-1.0 pylonsrc ! queue ! videoconvert ! jpegenc ! queue ! tcpclientsink
 ```
 ```
 
+5. Use configuration file and serial number to select camera
+```
+```
+
+
 # (Optional) Use GStreamer with native Raspberry PI HQ camera
+
+Example GStreamer pipelines:
 
 1. Show camera video on display
 ```
