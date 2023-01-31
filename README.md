@@ -234,14 +234,16 @@ sudo apt install gstreamer1.0-rtsp
 
 ## (Optional) Install Basler Pylon & Pypylon
 
-https://www.baslerweb.com/en/downloads/software-downloads/pylon-7-2-1-linux-arm-64-bit/
+Install Basler ARM64 package and Pypylon Python libraries to use Basler camera in 64-bit Raspberry PI system-
 
-https://www.baslerweb.com/en/downloads/software-downloads/software-pylon-7-2-1-linux-arm-64bit-debian/ - Debian package is much easier to install.
 Instructions: 
 - https://www.baslerweb.com/fp-1666012566/media/downloads/software/pylon_software/INSTALL~9.txt
 - https://www.baslerweb.com/fp-1597837316/media/downloads/documents/application_notes/AW00162902000_How_to_Build_pylon_Applications_on_Raspberry_Pi.pdf
+- https://www.baslerweb.com/en/downloads/software-downloads/software-pylon-7-2-1-linux-arm-64bit-debian/ 
+- https://www.baslerweb.com/en/downloads/software-downloads/pylon-7-2-1-linux-arm-64-bit/
 
-The USB camera must be plugged into 3.0 USB port.
+Notes:
+- Remember that the USB camera must be plugged into 3.0 USB port.
 
 
 ```
@@ -249,15 +251,19 @@ cd $home
 ```
 
 ```
-mkdir ./pylon_setup
+mkdir basler
 ```
 
 ```
-wget https://tequ-files.s3.eu.cloud-object-storage.appdomain.cloud/pylon_7.2.1.25747_aarch64_setup.tar.gz
+cd basler
 ```
 
 ```
-tar -C ./pylon_setup -xzf ./pylon_*_setup.tar.gz
+wget https://tequ-files.s3.eu.cloud-object-storage.appdomain.cloud/pylon_7.2.1.25747_aarch64_debs.tar.gz
+```
+
+```
+tar -xvf pylon_7.2.1.25747_aarch64_debs.tar.gz
 ```
 
 ```
@@ -265,15 +271,7 @@ cd ./pylon_setup
 ```
 
 ```
-sudo mkdir /opt/pylon
-```
-
-```
-sudo tar -C /opt/pylon -xzf ./pylon_*.tar.gz
-```
-
-```
-sudo chmod 755 /opt/pylon
+sudo apt-get install ./pylon_*.deb 
 ```
 
 ```
@@ -283,7 +281,6 @@ sudo /opt/pylon/share/pylon/setup-usb.sh
 ```
 pip3 install pypylon
 ```
-
 
 To find pylonviewer, navigate to: /opt/pylon/bin/pylonviewer
 Open pylonviewer with "pylon Viewer" application which is under Sound & Video category.
