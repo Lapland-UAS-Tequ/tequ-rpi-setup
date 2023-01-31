@@ -163,7 +163,7 @@ curl -sSL https://deb.nodesource.com/setup_18.x | sudo bash -
 sudo apt-get install -y nodejs
 ```
 
-## (Optional) Install Tensorflow & Canvas for Object Detection in Node-RED
+# (Optional) Install Tensorflow & Canvas for Object Detection in Node-RED
 
 Tensorflow tjfs-node-gpu installation
 ```
