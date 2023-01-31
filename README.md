@@ -227,6 +227,11 @@ tar -zxvf rtsp-simple-server_v0.17.15_linux_armv7.tar.gz
 ./rtsp-simple-server
 ```
 
+Install RTSP GStreamer plug-in
+```
+sudo apt install gstreamer1.0-rtsp
+```
+
 ## (Optional) Install Basler Pylon & Pypylon
 
 https://www.baslerweb.com/en/downloads/software-downloads/pylon-7-2-1-linux-arm-64-bit/
@@ -236,12 +241,11 @@ Instructions:
 - https://www.baslerweb.com/fp-1666012566/media/downloads/software/pylon_software/INSTALL~9.txt
 - https://www.baslerweb.com/fp-1597837316/media/downloads/documents/application_notes/AW00162902000_How_to_Build_pylon_Applications_on_Raspberry_Pi.pdf
 
-```
-The usb camera must be plugged into 3.0 usb outlet.
-```
+The USB camera must be plugged into 3.0 USB port.
+
 
 ```
-cd
+cd $home
 ```
 
 ```
@@ -249,7 +253,11 @@ mkdir ./pylon_setup
 ```
 
 ```
-tar -C ./pylon_setup -xzf ./pylon_7.2.1.25747_aarch64_setup.tar.gz
+wget https://tequ-files.s3.eu.cloud-object-storage.appdomain.cloud/pylon_7.2.1.25747_aarch64_setup.tar.gz
+```
+
+```
+tar -C ./pylon_setup -xzf ./pylon_*_setup.tar.gz
 ```
 
 ```
@@ -261,7 +269,7 @@ sudo mkdir /opt/pylon
 ```
 
 ```
-sudo tar -C /opt/pylon -xzf ./pylon_7.2.1.25747_aarch64_setup.tar.gz
+sudo tar -C /opt/pylon -xzf ./pylon_*.tar.gz
 ```
 
 ```
@@ -276,10 +284,10 @@ sudo /opt/pylon/share/pylon/setup-usb.sh
 pip3 install pypylon
 ```
 
-```
+
 To find pylonviewer, navigate to: /opt/pylon/bin/pylonviewer
 Open pylonviewer with "pylon Viewer" application which is under Sound & Video category.
-```
+
 
 # (Optional) Install Gstreamer plugin for Basler cameras 
 
@@ -336,14 +344,45 @@ gst-inspect-1.0 pylonsrc
 ```
 
 Example pipelines, depending on camera settings
+
 ```
-gst-launch-1.0 pylonsrc config-file=config.pfs ! queue ! videoconvert ! jpegenc ! queue ! tcpclientsink port=55555
+gst-launch-1.0 pylonsrc ! queue ! videoconvert ! jpegenc ! queue ! tcpclientsink port=55555
+```
+
+1. Show camera video on display
+```
+```
+
+2. Publish H264 encoded camera video to RTSP server
+```
+```
+
+3. Publish camera video stream as JPEG stream to TCP server
+```
+```
+
+4. Combine 1&2&3 in single pipeline
+```
 ```
 
 # (Optional) Use GStreamer with native Raspberry PI HQ camera
 
-TBD
+1. Show camera video on display
+```
+```
 
-jatkan tätä huomenna
+2. Publish H264 encoded camera video to RTSP server
+```
+```
+
+3. Publish camera video stream as JPEG stream to TCP server
+```
+```
+
+4. Combine 1&2&3 in single pipeline
+```
+```
+
+
 https://platypus-boats.readthedocs.io/en/latest/source/rpi/video/video-streaming-gstreamer.html
 
