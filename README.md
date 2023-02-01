@@ -341,14 +341,18 @@ sudo ninja -C builddir install
 gst-inspect-1.0 pylonsrc
 ```
 
+# (Optional) Use GStreamer with native Raspberry PI HQ camera
+
 Example GStreamer pipelines:
 
 1. Show camera video on display
 ```
+gst-launch-1.0 pylonsrc ! videoconvert ! autovideosink
 ```
 
 2. Publish H264 encoded camera video to RTSP server
 ```
+
 ```
 
 3. Publish camera video stream as JPEG stream to TCP server
@@ -362,28 +366,6 @@ Example GStreamer pipelines:
 5. Use configuration file and serial number to select camera
 ```
 ```
-
-
-# (Optional) Use GStreamer with native Raspberry PI HQ camera
-
-Example GStreamer pipelines:
-
-1. Show camera video on display
-```
-```
-
-2. Publish H264 encoded camera video to RTSP server
-```
-```
-
-3. Publish camera video stream as JPEG stream to TCP server
-```
-```
-
-4. Combine 1&2&3 in single pipeline
-```
-```
-
 
 https://platypus-boats.readthedocs.io/en/latest/source/rpi/video/video-streaming-gstreamer.html
 
