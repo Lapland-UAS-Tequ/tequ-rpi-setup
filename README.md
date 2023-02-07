@@ -61,7 +61,7 @@ bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/mast
 ``` 
 Create users and setup passwords. If you selected no during the setup, run the command below.
 ```
-node-red admin init
+sudo node-red admin init
 ```
 
 ### 4. Configure Node-RED to autostart on boot
@@ -119,6 +119,7 @@ To use a camera with the RPI, you'll need the libcamera library, it should come 
 ```
 sudo apt install libcamera-apps
 ```
+
 ```
 sudo reboot
 ```
@@ -352,15 +353,17 @@ gst-launch-1.0 pylonsrc ! videoconvert ! autovideosink
 
 2. Publish H264 encoded camera video to RTSP server
 ```
-
+gst-launch-1.0 -v pylonsrc ! video/x-bayer,framerate=10/1,width=3840,height=2160,format=rggb ! queue ! bayer2rgb ! queue ! videoscale ! video/x-raw,width=960,height=540 ! queue ! videoconvert ! queue ! v4l2h264enc ! queue ! 'video/x-h264,level=(string)4' ! queue ! rtspclientsink location=rtsp://localhost:8554/testi204
 ```
 
 3. Publish camera video stream as JPEG stream to TCP server
 ```
+gst-launch-1.0 -v pylonsrc ! video/x-bayer,framerate=10/1,width=3840,height=2160,format=rggb ! queue ! bayer2rgb ! queue ! videoscale ! video/x-raw,width=960,height=540 ! queue ! videoconvert ! queue ! jpegenc ! queue ! tcpclientsink port=50002
 ```
 
 4. Combine 1&2&3 in single pipeline
 ```
+
 ```
 
 5. Use configuration file and serial number to select camera
