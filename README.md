@@ -342,7 +342,7 @@ sudo ninja -C builddir install
 gst-inspect-1.0 pylonsrc
 ```
 
-# (Optional) Use GStreamer with native Raspberry PI HQ camera
+# (Optional) Use GStreamer with Basler cameras
 
 Example GStreamer pipelines:
 
@@ -366,10 +366,28 @@ gst-launch-1.0 -v pylonsrc ! video/x-bayer,framerate=10/1,width=3840,height=2160
 gst-launch-1.0 -v pylonsrc ! video/x-bayer,framerate=10/1,width=1980,height=1080,format=rggb ! queue ! bayer2rgb ! tee name=t t. ! queue ! videoscale ! video/x-raw,width=960,height=540 ! queue ! videoconvert ! autovideosink t. ! queue ! videoscale ! video/x-raw,width=960,height=540 ! queue ! videoconvert ! queue ! v4l2h264enc ! queue ! 'video/x-h264,level=(string)4' ! queue ! rtspclientsink location=rtsp://localhost:8554/testi204 t. ! queue ! videoscale ! video/x-raw,width=960,height=540 ! queue ! videoconvert ! queue ! jpegenc ! queue ! tcpclientsink port=50002
 ```
 
-5. Use libcamerasrc to stream through rpicam
-```
-gst-launch-1.0 -v libcamerasrc ! video/x-raw,framerate=10/1,width=1920,height=1080 ! queue ! tee name=t t. ! queue ! videoconvert ! autovideosink t. ! queue ! videoscale ! video/x-raw,width=960,height=540 ! queue ! videoconvert ! queue ! v4l2h264enc ! queue ! 'video/x-h264,level=(string)4' ! queue ! rtspclientsink location=rtsp://localhost:8554/testi204 t. ! queue ! videoscale ! video/x-raw,width=960,height=540 ! queue ! videoconvert ! queue ! jpegenc ! queue ! tcpclientsink port=50002
+
+
+
+# (Optional) Use GStreamer with native Raspberry PI HQ camera
+
+1. Show camera video on display
 ```
 
-https://platypus-boats.readthedocs.io/en/latest/source/rpi/video/video-streaming-gstreamer.html
+```
+
+2. Publish H264 encoded camera video to RTSP server
+```
+
+```
+
+3. Publish camera video stream as JPEG stream to TCP server
+```
+
+```
+
+
+4. Use libcamerasrc to stream through rpicam
+```
+gst-launch-1.0 -v libcamerasrc ! video/x-raw,framerate=10/1,width=1920,height=1080 ! queue ! tee name=t t. ! queue ! videoconvert ! autovideosink t. ! queue ! videoscale ! video/x-raw,width=960,height=540 ! queue ! videoconvert ! queue ! v4l2h264enc ! queue ! 'video/x-h264,level=(string)4' ! queue ! rtspclientsink location=rtsp://localhost:8554/testi204 t. ! queue ! videoscale ! video/x-raw,width=960,height=540 ! queue ! videoconvert ! queue ! jpegenc ! queue ! tcpclientsink port=50002
 
