@@ -80,9 +80,8 @@ node-red-start
 ```
 cd ~/.node-red
 npm install node-red-auth-github &&
-npm install node-red-dashboard && 
+npm install @flowfuse/node-red-dashboard && 
 npm install node-red-node-base64 &&
-npm install node-red-node-cf-cloudant && 
 npm install node-red-node-daemon &&
 npm install node-red-node-email && 
 npm install node-red-node-exif && 
@@ -93,17 +92,14 @@ npm install node-red-contrib-aggregator &&
 npm install node-red-contrib-binary && 
 npm install node-red-contrib-buffer-parser && 
 npm install node-red-contrib-calc &&
-npm install node-red-contrib-cos && 
 npm install node-red-contrib-counter &&
 npm install node-red-contrib-fs && 
 npm install node-red-contrib-fs-ops && 
-npm install node-red-contrib-ibm-watson-iot &&
 npm install node-red-contrib-image-info &&
 npm install node-red-contrib-image-output &&
 npm install node-red-contrib-moment && 
 npm install node-red-contrib-multipart-stream-decoder &&
 npm install node-red-contrib-multipart-stream-encoder &&
-npm install node-red-contrib-scx-ibmiotapp &&
 npm install node-red-contrib-browser-utils &&
 npm install node-red-contrib-sunevents  
 ```
