@@ -8,8 +8,8 @@ Raspberry PI 3/4 preparation for DAQ & AI usage.
 
 | Software      | Version       | 
 | ------------- |:-------------:| 
-| node.js       | 18.12.1       |
-| node-red	    | 3.0.2      |
+| node.js       | 18.20.2       |
+| node-red	    | 3.1.9      |
 | tfjs-node-gpu | 3.13.0	    |
 | pylon         | 7.2.1      |
 
@@ -157,12 +157,12 @@ sudo systemctl start watchdog
 sudo systemctl status watchdog
 ```
 
-### 8. Update node.js to version 18
+### 8. Update node.js to version 20
 
 ```
 sudo apt update
 sudo apt upgrade
-curl -sSL https://deb.nodesource.com/setup_18.x | sudo bash -
+curl -sSL https://deb.nodesource.com/setup_20.x | sudo bash -
 sudo apt-get install -y nodejs
 ```
 
